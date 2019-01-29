@@ -1,25 +1,27 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Scanner;
 
+import java.util.*;
 public class BrowserHystory {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Deque<String> browser = new ArrayDeque<>();
+
+        ArrayDeque<String> browser = new ArrayDeque<>();
         String line = scanner.nextLine();
+
         String current = "";
-        while (!line.equals("Home")){
+        while(!line.equals("Home")){
             if(line.equals("back")){
-                if(!browser.isEmpty()){current=browser.pop();
-                }else{
+                if(!browser.isEmpty()) {current = browser.pop();
+                } else {
                     System.out.println("no previous URLs");
-                    line =scanner.nextLine();
+                    line = scanner.nextLine();
                     continue;}
-            }else{
-                if(!current.equals("")){browser.push(current);}
-                current=line;}
+            } else {
+                if(!current.equals("")) {browser.push(current);}
+                current = line;}
             System.out.println(current);
-            line=scanner.nextLine();}
+            line = scanner.nextLine();}
+
+
 
     }
 }
